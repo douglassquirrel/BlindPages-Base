@@ -1,3 +1,8 @@
+if [[ $EUID -ne 0 ]]; then
+   echo "BLINDPAGES: This script must be run as root" 1>&2
+   exit 1
+fi
+
 echo "BLINDPAGES: Installing puppet"
 apt-get install puppet
 echo "BLINDPAGES: Done installing puppet"
