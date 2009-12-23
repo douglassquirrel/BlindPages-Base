@@ -25,7 +25,7 @@ Get: 7 http://gb.archive.ubuntu.com hardy/universe libruby 4.1 [5206B]
 Get: 8 http://gb.archive.ubuntu.com hardy/universe libshadow-ruby1.8 1.4.1-8 [8638B]
 Get: 9 http://gb.archive.ubuntu.com hardy/universe libxmlrpc-ruby 4.1 [2314B]
 Get: 10 http://gb.archive.ubuntu.com hardy/universe puppet 0.24.4-3 [452kB]
-Fetched 2030kB in 6s (327kB/s)
+Fetched 2030kB in 6s (316kB/s)
 Selecting previously deselected package libruby1.8.
 (Reading database ... 15981 files and directories currently installed.)
 Unpacking libruby1.8 (from .../libruby1.8_1.8.6.111-2ubuntu1.3_i386.deb) ...
@@ -109,7 +109,6 @@ BLINDPAGES: Running puppet
 [0;34mdebug: Adding code to main on line 3 in file /etc/puppet/manifests/modules.pp[0m
 [0;34mdebug: importing '/etc/puppet/manifests/nodes.pp'[0m
 [0;34mdebug: Adding code to main on line 9 in file /etc/puppet/manifests/site.pp[0m
-[0;35mwarning: Scope(Class[mysql]): no mysql root password given - sorry[0m
 [0;34mdebug: importing '/etc/puppet/modules/mysql/manifests/init.pp'[0m
 [0;32minfo: Autoloaded module mysql[0m
 [0;34mdebug: importing '/etc/puppet/modules/mysql/manifests/database.pp'[0m
@@ -138,29 +137,29 @@ BLINDPAGES: Running puppet
 [0;34mdebug: Executing '/usr/bin/dpkg-query -W --showformat '${Status} ${Package} ${Version}\n''[0m
 [0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat '${Status} ${Package} ${Version}\n''[0m
 [0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]/require: requires Class[mysql][0m
-[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n libmysqlclient15-dev'[0m
-[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: Changing ensure[0m
-[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: 1 change(s)[0m
-[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install libmysqlclient15-dev'[0m
-[0;31mnotice: //Node[default]/mysql/Package[libmysqlclient15-dev]/ensure: ensure changed 'purged' to 'present'[0m
-[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n mysql-client'[0m
-[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: Changing ensure[0m
-[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: 1 change(s)[0m
-[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install mysql-client'[0m
-[0;31mnotice: //Node[default]/mysql/Package[mysql-client]/ensure: ensure changed 'purged' to 'present'[0m
 [0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n mysql-server'[0m
 [0;34mdebug: //Node[default]/mysql/Package[mysql-server]: Changing ensure[0m
 [0;34mdebug: //Node[default]/mysql/Package[mysql-server]: 1 change(s)[0m
 [0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install mysql-server'[0m
 [0;31mnotice: //Node[default]/mysql/Package[mysql-server]/ensure: ensure changed 'purged' to 'present'[0m
-[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing check '/usr/bin/mysql -u root -p --execute="SHOW DATABASES;" | grep 'blindpages''[0m
-[0;34mdebug: Executing '/usr/bin/mysql -u root -p --execute="SHOW DATABASES;" | grep 'blindpages''[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n mysql-client'[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: Changing ensure[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: 1 change(s)[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install mysql-client'[0m
+[0;31mnotice: //Node[default]/mysql/Package[mysql-client]/ensure: ensure changed 'purged' to 'present'[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n libmysqlclient15-dev'[0m
+[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: Changing ensure[0m
+[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: 1 change(s)[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install libmysqlclient15-dev'[0m
+[0;31mnotice: //Node[default]/mysql/Package[libmysqlclient15-dev]/ensure: ensure changed 'purged' to 'present'[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing check '/usr/bin/mysql -u root --execute="SHOW DATABASES;" | grep 'blindpages''[0m
+[0;34mdebug: Executing '/usr/bin/mysql -u root --execute="SHOW DATABASES;" | grep 'blindpages''[0m
 [0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Changing returns[0m
 [0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: 1 change(s)[0m
-[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing '/usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages";'[0m
-[0;34mdebug: Executing '/usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages";'[0m
-[0;33merr: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]/returns: change from notrun to 0 failed: /usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages"; returned 1 instead of 0 at /etc/puppet/modules/mysql/manifests/database.pp:9[0m
-[0;34mdebug: Finishing transaction -607405658 with 4 changes[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing '/usr/bin/mysql -u root --execute="CREATE DATABASE blindpages";'[0m
+[0;34mdebug: Executing '/usr/bin/mysql -u root --execute="CREATE DATABASE blindpages";'[0m
+[0;31mnotice: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]/returns: executed successfully[0m
+[0;34mdebug: Finishing transaction -607602568 with 4 changes[0m
 BLINDPAGES: Puppet finished
 BLINDPAGES: Running mysql setup script
 BLINDPAGES: Done setting up mysql
