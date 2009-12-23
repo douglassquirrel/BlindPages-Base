@@ -1,1 +1,1 @@
-apt-get install puppet mysql
+apt-get install puppet mysql-server mysql-client
