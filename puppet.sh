@@ -1,5 +1,5 @@
 echo "BLINDPAGES: Installing puppet"
-sudo apt-get install puppet
+apt-get install puppet
 echo "BLINDPAGES: Done installing puppet"
 
 echo "BLINDPAGES: Testing puppet"
@@ -7,10 +7,10 @@ puppet puppet-min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
 echo "BLINDPAGES: Setting up files"
-sudo mkdir /etc/puppet/manifests
-sudo mkdir /etc/puppet/manifests/classes
-sudo cp sudo.pp /etc/puppet/manifests/classes
-sudo cp site.pp /etc/puppet/manifests
+mkdir /etc/puppet/manifests
+mkdir /etc/puppet/manifests/classes
+cp sudo.pp /etc/puppet/manifests/classes
+cp site.pp /etc/puppet/manifests
 mkdir ~/.puppet
 mkdir ~/.puppet/var
 echo "BLINDPAGES: Files copied"
