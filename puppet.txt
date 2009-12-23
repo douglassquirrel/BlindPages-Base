@@ -1,0 +1,166 @@
+Please enter desired root password: Please enter desired blindpages password: BLINDPAGES: Installing puppet
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  facter libopenssl-ruby libopenssl-ruby1.8 libruby libruby1.8
+  libshadow-ruby1.8 libxmlrpc-ruby ruby ruby1.8
+Suggested packages:
+  rdoc1.8 ri1.8 ruby1.8-examples
+Recommended packages:
+  rdoc
+The following NEW packages will be installed
+  facter libopenssl-ruby libopenssl-ruby1.8 libruby libruby1.8
+  libshadow-ruby1.8 libxmlrpc-ruby puppet ruby ruby1.8
+0 upgraded, 10 newly installed, 0 to remove and 31 not upgraded.
+Need to get 2030kB of archives.
+After this operation, 9908kB of additional disk space will be used.
+Get: 1 http://gb.archive.ubuntu.com hardy-updates/main libruby1.8 1.8.6.111-2ubuntu1.3 [1384kB]
+Get: 2 http://gb.archive.ubuntu.com hardy-updates/main ruby1.8 1.8.6.111-2ubuntu1.3 [24.9kB]
+Get: 3 http://gb.archive.ubuntu.com hardy/main ruby 4.1 [20.7kB]
+Get: 4 http://gb.archive.ubuntu.com hardy/universe facter 1.3.8-1 [20.2kB]
+Get: 5 http://gb.archive.ubuntu.com hardy-updates/universe libopenssl-ruby1.8 1.8.6.111-2ubuntu1.3 [108kB]
+Get: 6 http://gb.archive.ubuntu.com hardy/universe libopenssl-ruby 4.1 [4934B]
+Get: 7 http://gb.archive.ubuntu.com hardy/universe libruby 4.1 [5206B]
+Get: 8 http://gb.archive.ubuntu.com hardy/universe libshadow-ruby1.8 1.4.1-8 [8638B]
+Get: 9 http://gb.archive.ubuntu.com hardy/universe libxmlrpc-ruby 4.1 [2314B]
+Get: 10 http://gb.archive.ubuntu.com hardy/universe puppet 0.24.4-3 [452kB]
+Fetched 2030kB in 6s (327kB/s)
+Selecting previously deselected package libruby1.8.
+(Reading database ... 15981 files and directories currently installed.)
+Unpacking libruby1.8 (from .../libruby1.8_1.8.6.111-2ubuntu1.3_i386.deb) ...
+Selecting previously deselected package ruby1.8.
+Unpacking ruby1.8 (from .../ruby1.8_1.8.6.111-2ubuntu1.3_i386.deb) ...
+Selecting previously deselected package ruby.
+Unpacking ruby (from .../apt/archives/ruby_4.1_all.deb) ...
+Selecting previously deselected package facter.
+Unpacking facter (from .../facter_1.3.8-1_all.deb) ...
+Selecting previously deselected package libopenssl-ruby1.8.
+Unpacking libopenssl-ruby1.8 (from .../libopenssl-ruby1.8_1.8.6.111-2ubuntu1.3_i386.deb) ...
+Selecting previously deselected package libopenssl-ruby.
+Unpacking libopenssl-ruby (from .../libopenssl-ruby_4.1_all.deb) ...
+Selecting previously deselected package libruby.
+Unpacking libruby (from .../archives/libruby_4.1_all.deb) ...
+Selecting previously deselected package libshadow-ruby1.8.
+Unpacking libshadow-ruby1.8 (from .../libshadow-ruby1.8_1.4.1-8_i386.deb) ...
+Selecting previously deselected package libxmlrpc-ruby.
+Unpacking libxmlrpc-ruby (from .../libxmlrpc-ruby_4.1_all.deb) ...
+Selecting previously deselected package puppet.
+Unpacking puppet (from .../puppet_0.24.4-3_all.deb) ...
+Setting up libruby1.8 (1.8.6.111-2ubuntu1.3) ...
+
+Setting up ruby1.8 (1.8.6.111-2ubuntu1.3) ...
+Setting up ruby (4.1) ...
+Setting up facter (1.3.8-1) ...
+Setting up libopenssl-ruby1.8 (1.8.6.111-2ubuntu1.3) ...
+Setting up libopenssl-ruby (4.1) ...
+Setting up libruby (4.1) ...
+Setting up libshadow-ruby1.8 (1.4.1-8) ...
+Setting up libxmlrpc-ruby (4.1) ...
+Setting up puppet (0.24.4-3) ...
+ * Starting puppet configuration management tool       [80G [74G[ OK ]
+
+Processing triggers for libc6 ...
+ldconfig deferred processing now taking place
+BLINDPAGES: Done installing puppet
+BLINDPAGES: Testing puppet
+[0;31mnotice: Scope(Class[hello]): hello world[0m
+BLINDPAGES: Test complete (should have printed 'hello world')
+BLINDPAGES: Setting up files
+`manifests/modules.pp' -> `/etc/puppet/manifests/modules.pp'
+`manifests/nodes.pp' -> `/etc/puppet/manifests/nodes.pp'
+`manifests/site.pp' -> `/etc/puppet/manifests/site.pp'
+`modules/apache' -> `/etc/puppet/modules/apache'
+`modules/apache/manifests' -> `/etc/puppet/modules/apache/manifests'
+`modules/apache/manifests/defines' -> `/etc/puppet/modules/apache/manifests/defines'
+`modules/apache/manifests/defines/http_site.pp' -> `/etc/puppet/modules/apache/manifests/defines/http_site.pp'
+`modules/apache/manifests/defines/module.pp' -> `/etc/puppet/modules/apache/manifests/defines/module.pp'
+`modules/apache/manifests/defines/site.pp' -> `/etc/puppet/modules/apache/manifests/defines/site.pp'
+`modules/apache/manifests/apache2.pp' -> `/etc/puppet/modules/apache/manifests/apache2.pp'
+`modules/apache/manifests/init.pp' -> `/etc/puppet/modules/apache/manifests/init.pp'
+`modules/apache/README' -> `/etc/puppet/modules/apache/README'
+`modules/mysql' -> `/etc/puppet/modules/mysql'
+`modules/mysql/manifests' -> `/etc/puppet/modules/mysql/manifests'
+`modules/mysql/manifests/database.pp' -> `/etc/puppet/modules/mysql/manifests/database.pp'
+`modules/mysql/manifests/init.pp' -> `/etc/puppet/modules/mysql/manifests/init.pp'
+`modules/mysql/README' -> `/etc/puppet/modules/mysql/README'
+`modules/passenger' -> `/etc/puppet/modules/passenger'
+`modules/passenger/manifests' -> `/etc/puppet/modules/passenger/manifests'
+`modules/passenger/manifests/init.pp' -> `/etc/puppet/modules/passenger/manifests/init.pp'
+`modules/passenger/manifests/passenger.pp' -> `/etc/puppet/modules/passenger/manifests/passenger.pp'
+`modules/passenger/README' -> `/etc/puppet/modules/passenger/README'
+`modules/ubuntu' -> `/etc/puppet/modules/ubuntu'
+`modules/ubuntu/manifests' -> `/etc/puppet/modules/ubuntu/manifests'
+`modules/ubuntu/manifests/init.pp' -> `/etc/puppet/modules/ubuntu/manifests/init.pp'
+`modules/ubuntu/README' -> `/etc/puppet/modules/ubuntu/README'
+BLINDPAGES: Files copied
+BLINDPAGES: Running puppet in parseonly mode
+BLINDPAGES: Done in parseonly mode
+BLINDPAGES: Running puppet
+[0;34mdebug: importing '/etc/puppet/manifests/modules.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/mysql/manifests/init.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/init.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/apache2.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/init.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/defines/http_site.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/defines/module.pp'[0m
+[0;34mdebug: importing '/etc/puppet/modules/apache/manifests/defines/site.pp'[0m
+[0;34mdebug: Adding code to main on line 3 in file /etc/puppet/modules/apache/manifests/init.pp[0m
+[0;34mdebug: Adding code to main on line 3 in file /etc/puppet/manifests/modules.pp[0m
+[0;34mdebug: importing '/etc/puppet/manifests/nodes.pp'[0m
+[0;34mdebug: Adding code to main on line 9 in file /etc/puppet/manifests/site.pp[0m
+[0;35mwarning: Scope(Class[mysql]): no mysql root password given - sorry[0m
+[0;34mdebug: importing '/etc/puppet/modules/mysql/manifests/init.pp'[0m
+[0;32minfo: Autoloaded module mysql[0m
+[0;34mdebug: importing '/etc/puppet/modules/mysql/manifests/database.pp'[0m
+[0;32minfo: Autoloaded file mysql/database from module mysql[0m
+[0;34mdebug: Puppet::Type::Package::ProviderUp2date: Not suitable: missing /usr/sbin/up2date-nox[0m
+[0;34mdebug: Puppet::Type::Package::ProviderPorts: Not suitable: missing /usr/local/sbin/portupgrade[0m
+[0;34mdebug: Puppet::Type::Package::ProviderGem: Not suitable: missing gem[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApple: Not suitable: missing /Library/Receipts[0m
+[0;34mdebug: Puppet::Type::Package::ProviderPortage: Not suitable: missing /usr/bin/emerge[0m
+[0;34mdebug: Puppet::Type::Package::ProviderFreebsd: Not suitable: missing /usr/sbin/pkg_add[0m
+[0;34mdebug: Puppet::Type::Package::ProviderFink: Not suitable: missing /sw/bin/fink[0m
+[0;34mdebug: Puppet::Type::Package::ProviderPkgdmg: Not suitable: missing /Library/Receipts[0m
+[0;34mdebug: Puppet::Type::Package::ProviderDarwinport: Not suitable: missing /opt/local/bin/port[0m
+[0;34mdebug: Puppet::Type::Package::ProviderYum: Not suitable: missing yum[0m
+[0;34mdebug: Puppet::Type::Package::ProviderBlastwave: Not suitable: missing pkg-get[0m
+[0;34mdebug: Puppet::Type::Package::ProviderUrpmi: Not suitable: missing urpmi[0m
+[0;34mdebug: Puppet::Type::Package::ProviderAppdmg: Not suitable: missing /Library/Receipts[0m
+[0;34mdebug: Puppet::Type::Package::ProviderAptrpm: Not suitable: missing rpm[0m
+[0;34mdebug: Puppet::Type::Package::ProviderOpenbsd: Not suitable: missing pkg_add[0m
+[0;34mdebug: Puppet::Type::Package::ProviderRug: Not suitable: missing /usr/bin/rug[0m
+[0;34mdebug: Puppet::Type::Package::ProviderSunfreeware: Not suitable: missing pkg-get[0m
+[0;34mdebug: Puppet::Type::Package::ProviderRpm: Not suitable: missing rpm[0m
+[0;34mdebug: Puppet::Type::Package::ProviderSun: Not suitable: missing /usr/sbin/pkgadd[0m
+[0;34mdebug: Creating default schedules[0m
+[0;34mdebug: Prefetching apt resources for package[0m
+[0;34mdebug: Executing '/usr/bin/dpkg-query -W --showformat '${Status} ${Package} ${Version}\n''[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat '${Status} ${Package} ${Version}\n''[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]/require: requires Class[mysql][0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n libmysqlclient15-dev'[0m
+[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: Changing ensure[0m
+[0;34mdebug: //Node[default]/mysql/Package[libmysqlclient15-dev]: 1 change(s)[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install libmysqlclient15-dev'[0m
+[0;31mnotice: //Node[default]/mysql/Package[libmysqlclient15-dev]/ensure: ensure changed 'purged' to 'present'[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n mysql-client'[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: Changing ensure[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-client]: 1 change(s)[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install mysql-client'[0m
+[0;31mnotice: //Node[default]/mysql/Package[mysql-client]/ensure: ensure changed 'purged' to 'present'[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/dpkg-query -W --showformat ${Status} ${Package} ${Version}\n mysql-server'[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-server]: Changing ensure[0m
+[0;34mdebug: //Node[default]/mysql/Package[mysql-server]: 1 change(s)[0m
+[0;34mdebug: Puppet::Type::Package::ProviderApt: Executing '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install mysql-server'[0m
+[0;31mnotice: //Node[default]/mysql/Package[mysql-server]/ensure: ensure changed 'purged' to 'present'[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing check '/usr/bin/mysql -u root -p --execute="SHOW DATABASES;" | grep 'blindpages''[0m
+[0;34mdebug: Executing '/usr/bin/mysql -u root -p --execute="SHOW DATABASES;" | grep 'blindpages''[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Changing returns[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: 1 change(s)[0m
+[0;34mdebug: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]: Executing '/usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages";'[0m
+[0;34mdebug: Executing '/usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages";'[0m
+[0;33merr: //Node[default]/Mysql::Database[blindpages]/Exec[Mysql: create blindpages db]/returns: change from notrun to 0 failed: /usr/bin/mysql -u root -p --execute="CREATE DATABASE blindpages"; returned 1 instead of 0 at /etc/puppet/modules/mysql/manifests/database.pp:9[0m
+[0;34mdebug: Finishing transaction -607405658 with 4 changes[0m
+BLINDPAGES: Puppet finished
+BLINDPAGES: Running mysql setup script
+BLINDPAGES: Done setting up mysql
