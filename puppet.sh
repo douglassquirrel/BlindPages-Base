@@ -11,8 +11,6 @@ mkdir /etc/puppet/manifests
 mkdir /etc/puppet/manifests/classes
 cp sudo.pp /etc/puppet/manifests/classes
 cp site.pp /etc/puppet/manifests
-mkdir ~/.puppet
-mkdir ~/.puppet/var
 echo "BLINDPAGES: Files copied"
 
 echo "BLINDPAGES: Running puppet basic recipe"
