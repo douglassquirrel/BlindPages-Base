@@ -1,6 +1,6 @@
 echo "BLINDPAGES: Installing puppet"
 apt-get install puppet
-echo "BLINDPAGES: Done installing puppet
+echo "BLINDPAGES: Done installing puppet"
 
 if [ "$(whoami)" != 'root' ]; then
    echo "BLINDPAGES: This script must be run as root" 1>&2
