@@ -1,4 +1,6 @@
-scp squirrel@192.168.2.2:/home/squirrel/.ssh/id* ~/.ssh
+cd .ssh
+scp squirrel@192.168.2.2:/home/squirrel/.ssh/id* .
+cd
 sudo apt-get install git-core
 git init
 ssh git@github.com
