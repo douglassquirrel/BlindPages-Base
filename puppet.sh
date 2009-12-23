@@ -1,4 +1,4 @@
-if [[ $EUID -ne 0 ]]; then
+if [ "$(whoami)" != 'root' ]; then
    echo "BLINDPAGES: This script must be run as root" 1>&2
    exit 1
 fi
