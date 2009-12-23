@@ -13,7 +13,9 @@ echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
 echo "BLINDPAGES: Setting up files"
 mkdir /etc/puppet/manifests
+mkdir /etc/puppet/modules
 cp -Rv manifests/* /etc/puppet/manifests
+cp -Rv modules/* /etc/puppet/modules
 echo "BLINDPAGES: Files copied"
 
 echo "BLINDPAGES: Running puppet in parseonly mode"
