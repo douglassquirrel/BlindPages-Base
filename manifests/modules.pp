@@ -1,1 +1,1 @@
-import 'mysql'
+import "mysql"
