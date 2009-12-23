@@ -14,7 +14,7 @@ sudo cp site.pp /etc/puppet/manifests
 echo "BLINDPAGES: Files copied"
 
 echo "BLINDPAGES: Running puppet basic recipe"
-cd etc/puppet && puppet --parseonly manifests/site.pp
-cd etc/puppet && puppet --noop manifests/site.pp   --debug
-cd etc/puppet && puppet manifests/site.pp
+cd /etc/puppet && puppet --parseonly /etc/puppet/manifests/site.pp
+cd /etc/puppet && puppet --noop /etc/puppet/manifests/site.pp   --debug
+cd /etc/puppet && puppet /etc/puppet/manifests/site.pp
 echo "BLINDPAGES: Puppet basic recipe finished"
