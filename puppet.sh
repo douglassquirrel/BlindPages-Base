@@ -12,14 +12,11 @@ puppet puppet-min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
 echo "BLINDPAGES: Setting up files"
-mkdir /etc/puppet/manifests
-mkdir /etc/puppet/manifests/classes
-cp sudo.pp /etc/puppet/manifests/classes
-cp site.pp /etc/puppet/manifests
+cp -Rv manifests /etc/puppet/manifests
 echo "BLINDPAGES: Files copied"
 
-echo "BLINDPAGES: Running puppet basic recipe"
+echo "BLINDPAGES: Running puppet "
 puppet --parseonly /etc/puppet/manifests/site.pp
 puppet --noop /etc/puppet/manifests/site.pp   --debug
 puppet /etc/puppet/manifests/site.pp
-echo "BLINDPAGES: Puppet basic recipe finished"
+echo "BLINDPAGES: Puppet finished"
