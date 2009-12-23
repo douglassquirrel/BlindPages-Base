@@ -1,3 +1,4 @@
 1. Install bare Ubuntu 8.04 with ssh support
 2. Follow steps in git.sh (can't really run it since you can't get it via git yet)
-3. Run sudo puppet.sh and verify tests run correctly
+3. Run sudo ./install.sh
+4. Run sudo ./puppet.sh 
