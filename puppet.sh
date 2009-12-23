@@ -6,15 +6,17 @@ echo "BLINDPAGES: Testing puppet"
 puppet puppet-min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
-echo "BLINDPAGES: Copying files"
+echo "BLINDPAGES: Setting up files"
 sudo mkdir /etc/puppet/manifests
 sudo mkdir /etc/puppet/manifests/classes
 sudo cp sudo.pp /etc/puppet/manifests/classes
 sudo cp site.pp /etc/puppet/manifests
+sudo mkdir ~/.puppet
+sudo mkdir ~/.puppet/var
 echo "BLINDPAGES: Files copied"
 
 echo "BLINDPAGES: Running puppet basic recipe"
-cd /etc/puppet && puppet --parseonly /etc/puppet/manifests/site.pp
-cd /etc/puppet && puppet --noop /etc/puppet/manifests/site.pp   --debug
-cd /etc/puppet && puppet /etc/puppet/manifests/site.pp
+puppet --parseonly /etc/puppet/manifests/site.pp
+puppet --noop /etc/puppet/manifests/site.pp   --debug
+puppet /etc/puppet/manifests/site.pp
 echo "BLINDPAGES: Puppet basic recipe finished"
