@@ -3,10 +3,6 @@ if [ "$(whoami)" != 'root' ]; then
    exit 1
 fi
 
-echo "BLINDPAGES: Installing puppet"
-apt-get install puppet
-echo "BLINDPAGES: Done installing puppet"
-
 echo "BLINDPAGES: Testing puppet"
 puppet puppet-min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
