@@ -12,7 +12,8 @@ puppet puppet-min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
 echo "BLINDPAGES: Setting up files"
-cp -Rv manifests /etc/puppet/manifests
+mkdir /etc/puppet/manifests
+cp -Rv manifests/* /etc/puppet/manifests
 echo "BLINDPAGES: Files copied"
 
 echo "BLINDPAGES: Running puppet "
