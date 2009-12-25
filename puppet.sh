@@ -23,5 +23,5 @@ puppet --parseonly /etc/puppet/manifests/site.pp
 echo "BLINDPAGES: Done in parseonly mode"
 
 echo "BLINDPAGES: Running puppet"
-puppet --debug /etc/puppet/manifests/site.pp
+puppet --verbose --debug /etc/puppet/manifests/site.pp
 echo "BLINDPAGES: Puppet finished"
