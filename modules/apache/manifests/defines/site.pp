@@ -16,13 +16,6 @@ define apache::site ( $ensure = 'present',
     unless => "test -f /etc/apache2/sites-enabled/${fq_host}"
   }
 
-  file { 
-      "/data": ensure => directory;
-      "/data/www": ensure => directory, require => File['/data'];
-      "/data/www/doc": owner => www-data, ensure => directory, require => File['/data/www'];
-      "/data/www/log": ensure => directory, require => File["/data/www"];  
-    }
-
   file { "/data/www/doc/$name":
       ensure => directory,
       owner => $owner,
