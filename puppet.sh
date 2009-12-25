@@ -4,7 +4,7 @@ if [ "$(whoami)" != 'root' ]; then
 fi
 
 echo "BLINDPAGES: Installing puppet"
-apt-get install puppet
+apt-get -y install puppet
 echo "BLINDPAGES: Done installing puppet"
 
 echo "BLINDPAGES: Testing puppet"
