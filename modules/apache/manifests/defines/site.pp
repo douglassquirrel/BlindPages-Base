@@ -18,8 +18,7 @@ define apache::site ( $ensure = 'present',
 
   file { "/data": ensure => directory;
       "/data/www": ensure => directory, require => File['/data'];
-      "/data/www/doc": owner => www-data, ensure => directory, require => File['
-/data/www'];
+      "/data/www/doc": owner => www-data, ensure => directory, require => File['/data/www']
       "/data/www/log": ensure => directory, require => File["/data/www"];
   }
 
