@@ -1,5 +1,5 @@
 $mods = "/etc/apache2/mods"
-define apache::module ( $ensure = 'present', $require_package = 'apache2' ) { 
+define apache2::module ( $ensure = 'present', $require_package = 'apache2' ) { 
         case $ensure {
                 'present' : { 
                         exec { "/usr/sbin/a2enmod $name":
