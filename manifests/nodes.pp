@@ -1,5 +1,4 @@
 node default {
-    include apache
     apache::site {"blindpages.com":}
 
     include mysql
