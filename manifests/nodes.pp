@@ -1,5 +1,6 @@
 node default {
-#    apache::site {"blindpages.com":}
+    include apache
+    apache::site {"blindpages.com":}
 
     include mysql
     $mysql_root_password = ""
