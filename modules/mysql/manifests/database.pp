@@ -3,14 +3,14 @@ define mysql::database($dbname, $ensure) {
     case $ensure {
         present: {
             exec { "Mysql: create $dbname db":
-                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"CREATE DATABASE $dbname\";",
+                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"CREATE DATABASE IF NOT EXISTS $dbname\";",
                     unless => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
                     require => Class['mysql']
             }
         }
         absent: {
             exec { "Mysql: drop $dbname db":
-                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"DROP DATABASE $dbname\";",
+                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"DROP DATABASE IF EXISTS $dbname\";",
                     onlyif => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
                     require => Class['mysql']
             }
