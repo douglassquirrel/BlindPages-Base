@@ -3,6 +3,12 @@ if [ "$(whoami)" != 'root' ]; then
    exit 1
 fi
 
+read -p "Please enter desired root password: " rootpassword
+read -p "Please enter desired blindpages password: " blindpagespassword
+echo $rootpassword
+echo $blindpagespassword
+exit 0
+
 echo "BLINDPAGES: Installing puppet"
 apt-get -y install puppet
 echo "BLINDPAGES: Done installing puppet"
@@ -25,3 +31,7 @@ echo "BLINDPAGES: Done in parseonly mode"
 echo "BLINDPAGES: Running puppet"
 puppet --verbose --debug /etc/puppet/manifests/site.pp
 echo "BLINDPAGES: Puppet finished"
+
+echo "BLINDPAGES: Running mysql setup script"
+./mysql.sh $rootpassword $blindpagespassword
+echo "BLINDPAGES: Done setting up mysql"
