@@ -1,5 +1,5 @@
 
-define apache2::site ( $ensure = 'present',
+define apache::site ( $ensure = 'present',
   $require_package = 'apache2',
   $owner = 'www-data',
   $group = 'www-data',

@@ -9,7 +9,7 @@ class apache2 {
     package { 
       "apache2": ensure => installed;
     }
-    apache2::module { "rewrite": ensure => present } 
+    apache::module { "rewrite": ensure => present } 
   }    
 
   service { "apache2":

@@ -1,2 +1,2 @@
 import "mysql"
-import "apache2"
+import "apache"
