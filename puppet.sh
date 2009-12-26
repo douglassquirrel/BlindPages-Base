@@ -7,7 +7,6 @@ read -p "Please enter desired root password: " rootpassword
 read -p "Please enter desired blindpages password: " blindpagespassword
 echo $rootpassword
 echo $blindpagespassword
-exit 0
 
 echo "BLINDPAGES: Installing puppet"
 apt-get -y install puppet
