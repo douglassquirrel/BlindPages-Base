@@ -1,17 +1,22 @@
 define mysql::database($dbname, $ensure) {
 
     case $ensure {
+        if $mysql_root_password == "" {
+            $password_arg = ""
+        } else {
+            $password_arg = "-p${mysql_root_password}"
+        }
         present: {
             exec { "Mysql: create $dbname db":
-                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"CREATE DATABASE $dbname\";",
-                    unless => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
+                    command => "/usr/bin/mysql -u root ${password_arg} --execute=\"CREATE DATABASE $dbname\";",
+                    unless => "/usr/bin/mysql -u root ${password_arg} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
                     require => Class['mysql']
             }
         }
         absent: {
             exec { "Mysql: drop $dbname db":
-                    command => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"DROP DATABASE $dbname\";",
-                    onlyif => "/usr/bin/mysql -u root -p${mysql_root_password} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
+                    command => "/usr/bin/mysql -u root ${password_arg} --execute=\"DROP DATABASE $dbname\";",
+                    onlyif => "/usr/bin/mysql -u root ${password_arg} --execute=\"SHOW DATABASES;\" | grep '$dbname'",
                     require => Class['mysql']
             }
         }
