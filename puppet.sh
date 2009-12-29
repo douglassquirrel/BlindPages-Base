@@ -3,8 +3,8 @@ if [ "$(whoami)" != 'root' ]; then
    exit 1
 fi
 
-read -p "Please enter desired root password: " rootpassword
-read -p "Please enter desired blindpages password: " blindpagespassword
+read -p "Please enter desired MySQL root password: " rootpassword
+read -p "Please enter desired MySQL blindpages password: " blindpagespassword
 
 echo "BLINDPAGES: Installing puppet"
 apt-get -y install puppet
