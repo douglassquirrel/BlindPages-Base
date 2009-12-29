@@ -13,6 +13,7 @@ define apache::site ( $ensure = 'present',
     require => Package[$require_package],
     require => File["/etc/apache2/sites-available/${fq_host}"],
     require => File["/data/www/doc/$name"],
+    require => Class["apache2::install"],
     unless => "test -f /etc/apache2/sites-enabled/${fq_host}"
   }
 
@@ -27,7 +28,8 @@ define apache::site ( $ensure = 'present',
       owner  => $owner,
       group  => $group,
       notify => Exec["apache2 reload"],
-      require => File["/data/www/doc"];
+      require => File["/data/www/doc"],
+      require => Class["apache2::install"];
         
   }
 }
