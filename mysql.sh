@@ -1,7 +1,6 @@
-for sql in "GRANT USAGE ON *.* TO 'blindpages'@'localhost'; DROP USER 'blindpages'@'localhost'"                           \
-           "CREATE USER 'blindpages'@'localhost' IDENTIFIED BY '$2'"                                                      \
-           "GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE ON blindpages.* TO 'blindpages'@'localhost'" 
+cat init.sql | while read sql
 do
+  echo "Executing $sql"
   echo $sql | mysql -uroot -pchangeme314159
 done
 
