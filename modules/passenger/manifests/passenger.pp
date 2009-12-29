@@ -33,8 +33,7 @@ class apache::passenger {
   		require => Exec["apt get update"];
     'ruby1.8-dev': ensure => present;
     'build-essential': ensure => present;
-    'fastthread': ensure => present, provider => gem;
-    'rails': ensure => '2.3.4', provider => gem;
+    'fastthread': ensure => present, provider => gem, require => Package["rubygems"];
+    'rails': ensure => '2.3.4', provider => gem, require => Package["rubygems"];
   }
 }
-node socks { include apache::passenger }

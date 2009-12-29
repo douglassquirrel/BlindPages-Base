@@ -6,7 +6,5 @@ node default {
     include mysql
     mysql::database{"blindpages": dbname => 'blindpages', ensure => present}
 
-    include rubygems::install
-
     include apache::passenger
 }
