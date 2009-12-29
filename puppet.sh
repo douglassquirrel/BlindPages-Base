@@ -36,6 +36,10 @@ cp -Rv manifests/* /etc/puppet/manifests
 cp -Rv modules/* /etc/puppet/modules
 echo "BLINDPAGES: Files copied"
 
+echo "BLINDPAGES: Installing rubygems"
+apt-get -y install rubygems
+echo "BLINDPAGES: Done installing rubygems"
+
 puppet_args="--templatedir /etc/puppet/templates"
 
 echo "BLINDPAGES: Running puppet in parseonly mode"
