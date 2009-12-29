@@ -8,10 +8,18 @@ if [ "$(whoami)" != 'root' ]; then
    die "BLINDPAGES: This script must be run as root" 1>&2
 fi
 
-rm -f /var/tmp/mysql-server-5.0-preseed
+echo "BLINDPAGES: Getting puppet modules"
+git clone git://github.com/simpsonjulian/puppet-passenger.git modules/passenger
+git clone git://github.com/simpsonjulian/puppet-mysql.git modules/mysql
+#git clone git://github.com/simpsonjulian/puppet-apache-ubuntu.git modules/apache
+git clone git://github.com/simpsonjulian/puppet-ubuntu.git modules/ubuntu
+echo "BLINDPAGES: Done getting puppet modules"
 
+echo "BLINDPAGES: Doing MySQL setup"
+rm -f /var/tmp/mysql-server-5.0-preseed
 read -p "Please enter desired MySQL root password: " rootpassword
 read -p "Please enter desired MySQL blindpages password: " blindpagespassword
+echo "BLINDPAGES: Done with MySQL setup"
 
 echo "BLINDPAGES: Installing puppet"
 apt-get -y install puppet
