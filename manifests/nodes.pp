@@ -3,6 +3,6 @@ node default {
     apache::site {"blindpages.com":}
 
     include mysql
-#    $mysql_root_password = ""
+    $mysql_root_password = "changeme314159"
     mysql::database{"blindpages": dbname => 'blindpages', ensure => present}
 }
