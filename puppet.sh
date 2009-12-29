@@ -22,8 +22,6 @@ clonemod git://github.com/simpsonjulian/puppet-mysql.git          mysql
 clonemod git://github.com/simpsonjulian/puppet-ubuntu.git         ubuntu
 echo "BLINDPAGES: Done getting puppet modules"
 
-exit
-
 echo "BLINDPAGES: Doing MySQL setup"
 rm -f /var/tmp/mysql-server-5.0-preseed
 read -p "Please enter desired MySQL root password: " rootpassword
