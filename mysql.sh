@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function dosql {
   echo "Executing $1"
   echo "$1" | mysql -uroot -pchangeme314159
