@@ -19,7 +19,7 @@ echo "BLINDPAGES: Installing rubygems and giternal"
 apt-get -y install rubygems
 wget http://media.build-doctor.com/giternal.deb 
 dpkg -i giternal.deb
-apt-get -f install
+apt-get -y -f install
 echo "BLINDPAGES: Done installing rubygems and giternal"
 
 echo "BLINDPAGES: Getting puppet modules"
