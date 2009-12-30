@@ -17,9 +17,7 @@ apt-get -y -f install
 echo "BLINDPAGES: Done installing rubygems and giternal"
 
 echo "BLINDPAGES: Getting puppet modules"
-cd modules
 giternal update
-cd ..
 echo "BLINDPAGES: Done getting puppet modules"
 
 echo "BLINDPAGES: Doing MySQL setup"
