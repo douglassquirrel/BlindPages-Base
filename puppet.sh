@@ -5,12 +5,6 @@ die() {
   exit 1
 }
 
-clonemod() {
-  if [ ! -d modules/$2 ]; then
-    git clone $1 modules/$2
-  fi
-}
-
 if [ "$(whoami)" != 'root' ]; then
    die "BLINDPAGES: This script must be run as root" 1>&2
 fi
@@ -23,10 +17,9 @@ apt-get -y -f install
 echo "BLINDPAGES: Done installing rubygems and giternal"
 
 echo "BLINDPAGES: Getting puppet modules"
-clonemod git://github.com/simpsonjulian/puppet-passenger.git      passenger
-clonemod git://github.com/simpsonjulian/puppet-mysql.git          mysql
-#clonemod git://github.com/simpsonjulian/puppet-apache-ubuntu.git apache
-clonemod git://github.com/simpsonjulian/puppet-ubuntu.git         ubuntu
+cd modules
+giternal update
+cd ..
 echo "BLINDPAGES: Done getting puppet modules"
 
 echo "BLINDPAGES: Doing MySQL setup"
