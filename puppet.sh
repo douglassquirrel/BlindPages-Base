@@ -15,6 +15,12 @@ if [ "$(whoami)" != 'root' ]; then
    die "BLINDPAGES: This script must be run as root" 1>&2
 fi
 
+echo "BLINDPAGES: Installing rubygems and giternal"
+apt-get -y install rubygems
+wget http://media.build-doctor.com/giternal.deb 
+dpkg -i giternal.deb
+echo "BLINDPAGES: Done installing rubygems and giternal"
+
 echo "BLINDPAGES: Getting puppet modules"
 clonemod git://github.com/simpsonjulian/puppet-passenger.git      passenger
 clonemod git://github.com/simpsonjulian/puppet-mysql.git          mysql
@@ -42,10 +48,6 @@ mkdir /etc/puppet/modules
 cp -Rv manifests/* /etc/puppet/manifests
 cp -Rv modules/* /etc/puppet/modules
 echo "BLINDPAGES: Files copied"
-
-echo "BLINDPAGES: Installing rubygems"
-apt-get -y install rubygems
-echo "BLINDPAGES: Done installing rubygems"
 
 puppet_args="--templatedir /etc/puppet/templates"
 
