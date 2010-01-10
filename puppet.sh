@@ -27,11 +27,15 @@ read -p "Please enter desired MySQL blindpages password: " blindpagespassword
 echo "BLINDPAGES: Done with MySQL setup"
 
 echo "BLINDPAGES: Installing puppet"
-apt-get -y install puppet
+#apt-get -y install puppet
+wget http://reductivelabs.com/downloads/puppet/puppet-latest.tgz
+gzip -d -c puppet-latest.tgz | tar xf -
+cd puppet-*
+ruby install.rb
 echo "BLINDPAGES: Done installing puppet"
 
 echo "BLINDPAGES: Testing puppet"
-puppet puppet-min.pp
+puppet puppet_min.pp
 echo "BLINDPAGES: Test complete (should have printed 'hello world')"
 
 echo "BLINDPAGES: Setting up files"
