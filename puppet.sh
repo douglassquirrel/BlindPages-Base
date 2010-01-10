@@ -27,10 +27,10 @@ read -p "Please enter desired MySQL blindpages password: " blindpagespassword
 echo "BLINDPAGES: Done with MySQL setup"
 
 echo "BLINDPAGES: Downloading and unpacking facter and puppet"
-wget http://reductivelabs.com/downloads/puppet/puppet-latest.tgz
-gzip -d -c puppet-latest.tgz | tar xfm -
-wget http://reductivelabs.com/downloads/facter/facter-latest.tgz
-gzip -d -c facter-latest.tgz | tar xfm -
+wget http://reductivelabs.com/downloads/puppet/puppet-0.24.5.tgz
+gzip -d -c puppet-0.24.5.tgz | tar xfm -
+wget http://reductivelabs.com/downloads/facter/facter-1.5.0.tgz
+gzip -d -c facter-1.5.0.tgz | tar xfm -
 echo "BLINDPAGES: Done downloading and unpacking facter and puppet"
 
 echo "BLINDPAGES: Installing facter"
