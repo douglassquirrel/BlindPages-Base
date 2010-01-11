@@ -1,3 +1,5 @@
 modules/mysql
 modules/passenger
 modules/ubuntu
+modules/nagios
+modules/apache
