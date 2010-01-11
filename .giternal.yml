@@ -7,3 +7,6 @@ passenger:
 ubuntu:
   repo: git://github.com/simpsonjulian/puppet-ubuntu.git
   path: modules
+nagios:
+  repo: git://github.com/simpsonjulian/puppet-nagios.git
+  path: modules
