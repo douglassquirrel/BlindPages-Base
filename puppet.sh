@@ -14,7 +14,7 @@ apt-get update
 echo "BLINDPAGES: Done updating repository"
 
 echo "BLINDPAGES: Installing build tools, rubygems, and giternal"
-apt-get -y install build-essential ruby1.8 rdoc1.8 libopenssl-ruby 
+apt-get -y install build-essential ruby1.8 rdoc1.8 ruby1.8-dev libopenssl-ruby 
 dpkg -i packages/giternal.deb packages/rubygems1.8_1.3.5-1ubuntu2_all.deb packages/rubygems_1.3.5-1ubuntu2_all.deb
 apt-get -y -f install
 echo "BLINDPAGES: Done installing"
