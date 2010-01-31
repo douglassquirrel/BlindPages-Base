@@ -10,9 +10,8 @@ if [ "$(whoami)" != 'root' ]; then
 fi
 
 echo "BLINDPAGES: Installing rubygems and giternal"
-apt-get -y install rubygems ruby1.8-dev make gcc
-wget http://media.build-doctor.com/giternal.deb 
-dpkg -i giternal.deb
+apt-get -y install build-essential ruby1.8 rdoc1.8 ruby1.8-dev 
+dpkg -i packages/giternal.deb packages/rubygems1.8_1.3.5-1ubuntu2_all.deb packages/rubygems_1.3.5-1ubuntu2_all.deb
 apt-get -y -f install
 echo "BLINDPAGES: Done installing rubygems and giternal"
 
