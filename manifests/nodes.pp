@@ -1,4 +1,6 @@
 node default {
+    include rubygems::install
+
     include apache::passenger
 
     include apache2::install
