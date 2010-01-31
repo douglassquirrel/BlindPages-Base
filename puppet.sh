@@ -9,6 +9,12 @@ if [ "$(whoami)" != 'root' ]; then
    die "BLINDPAGES: This script must be run as root" 1>&2
 fi
 
+echo "BLINDPAGES: Doing MySQL setup"
+rm -f /var/tmp/mysql-server-5.0-preseed
+read -p "Please enter desired MySQL root password: " rootpassword
+read -p "Please enter desired MySQL blindpages password: " blindpagespassword
+echo "BLINDPAGES: Done with MySQL setup"
+
 echo "BLINDPAGES: Updating ubuntu repository"
 apt-get update
 echo "BLINDPAGES: Done updating repository"
@@ -22,12 +28,6 @@ echo "BLINDPAGES: Done installing"
 echo "BLINDPAGES: Getting puppet modules"
 giternal update
 echo "BLINDPAGES: Done getting puppet modules"
-
-echo "BLINDPAGES: Doing MySQL setup"
-rm -f /var/tmp/mysql-server-5.0-preseed
-read -p "Please enter desired MySQL root password: " rootpassword
-read -p "Please enter desired MySQL blindpages password: " blindpagespassword
-echo "BLINDPAGES: Done with MySQL setup"
 
 if type -P puppet &>/dev/null && type -P facter &>/dev/null; then
     echo "BLINDPAGES: Facter and puppet already installed"
