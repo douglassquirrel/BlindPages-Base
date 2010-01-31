@@ -14,5 +14,5 @@ apache:
   repo: git://github.com/simpsonjulian/puppet-apache-ubuntu.git
   path: modules
 rubygems:
-  repo: git://github.com/simpsonjulian/puppet-rubygems.git
+  repo: git://github.com/douglassquirrel/puppet-rubygems.git
   path: modules
