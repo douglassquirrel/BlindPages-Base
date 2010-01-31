@@ -1,80 +1,84 @@
 #!/bin/bash
 
+function log() {
+  echo `date` "$1"
+}
+
 die() {
   echo $1
   exit 1
 }
 
 if [ "$(whoami)" != 'root' ]; then
-   die "BLINDPAGES: This script must be run as root" 1>&2
+   die "This script must be run as root" 1>&2
 fi
 
-echo "BLINDPAGES: Doing MySQL setup"
+log "Doing MySQL setup"
 rm -f /var/tmp/mysql-server-5.0-preseed
 read -p "Please enter desired MySQL root password: " rootpassword
 read -p "Please enter desired MySQL blindpages password: " blindpagespassword
-echo "BLINDPAGES: Done with MySQL setup"
+log "Done with MySQL setup"
 
-echo "BLINDPAGES: Updating ubuntu repository"
+log "Updating ubuntu repository"
 apt-get update
-echo "BLINDPAGES: Done updating repository"
+log "Done updating repository"
 
-echo "BLINDPAGES: Installing build tools, rubygems, and giternal"
+log "Installing build tools, rubygems, and giternal"
 apt-get -y install build-essential ruby1.8 rdoc1.8 ruby1.8-dev libopenssl-ruby 
 dpkg -i packages/giternal.deb packages/rubygems1.8_1.3.5-1ubuntu2_all.deb packages/rubygems_1.3.5-1ubuntu2_all.deb
 apt-get -y -f install
-echo "BLINDPAGES: Done installing"
+log "Done installing"
 
-echo "BLINDPAGES: Getting puppet modules"
+log "Getting puppet modules"
 giternal update
-echo "BLINDPAGES: Done getting puppet modules"
+log "Done getting puppet modules"
 
 if type -P puppet &>/dev/null && type -P facter &>/dev/null; then
-    echo "BLINDPAGES: Facter and puppet already installed"
+    log "Facter and puppet already installed"
 else
-    echo "BLINDPAGES: Downloading and unpacking facter and puppet"
+    log "Downloading and unpacking facter and puppet"
     wget http://reductivelabs.com/downloads/puppet/puppet-0.24.8.tgz
     gzip -d -c puppet-0.24.8.tgz | tar xfm -
     wget http://reductivelabs.com/downloads/facter/facter-1.5.4.tgz
     gzip -d -c facter-1.5.4.tgz | tar xfm -
-    echo "BLINDPAGES: Done downloading and unpacking facter and puppet"
+    log "Done downloading and unpacking facter and puppet"
 
-    echo "BLINDPAGES: Installing facter"
+    log "Installing facter"
     cd facter-*
     ruby install.rb
     cd ..
-    echo "BLINDPAGES: Done installing facter"
+    log "Done installing facter"
 
-    echo "BLINDPAGES: Installing puppet"
+    log "Installing puppet"
     #apt-get -y install puppet
     cd puppet-*
     ruby install.rb
     cd ..
-    echo "BLINDPAGES: Done installing puppet"
+    log "Done installing puppet"
 fi
 
-echo "BLINDPAGES: Testing puppet"
+log "Testing puppet"
 puppet puppet_min.pp
-echo "BLINDPAGES: Test complete (should have printed 'hello world')"
+log "Test complete (should have printed 'hello world')"
 
-echo "BLINDPAGES: Setting up files"
+log "Setting up files"
 mkdir -p /etc/puppet/manifests
 mkdir -p /etc/puppet/modules
 mkdir -p /var/puppet
 cp -Rv manifests/* /etc/puppet/manifests
 cp -Rv modules/* /etc/puppet/modules
-echo "BLINDPAGES: Files copied"
+log "Files copied"
 
 puppet_args="--templatedir /etc/puppet/templates"
 
-echo "BLINDPAGES: Running puppet in parseonly mode"
+log "Running puppet in parseonly mode"
 puppet --parseonly ${puppet_args} /etc/puppet/manifests/site.pp || die "puppet's not valid"
-echo "BLINDPAGES: Done in parseonly mode"
+log "Done in parseonly mode"
 
-echo "BLINDPAGES: Running puppet"
+log "Running puppet"
 puppet --verbose --debug ${puppet_args} /etc/puppet/manifests/site.pp
-echo "BLINDPAGES: Puppet finished"
+log "Puppet finished"
 
-echo "BLINDPAGES: Running mysql setup script"
+log "Running mysql setup script"
 ./mysql.sh $rootpassword $blindpagespassword
-echo "BLINDPAGES: Done setting up mysql"
+log "Done setting up mysql"
