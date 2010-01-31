@@ -10,3 +10,6 @@ ubuntu:
 nagios:
   repo: git://github.com/simpsonjulian/puppet-nagios.git
   path: modules
+apache:
+  repo: git://github.com/simpsonjulian/puppet-apache-ubuntu.git
+  path: modules
