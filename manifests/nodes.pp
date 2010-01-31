@@ -1,4 +1,6 @@
 node default {
+    include common::ubuntu
+
     include rubygems::install
 
     include apache::passenger

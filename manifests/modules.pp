@@ -1,3 +1,4 @@
+import "ubuntu"
 import "mysql"
 import "apache"
 import "passenger"

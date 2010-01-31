@@ -2,7 +2,7 @@ mysql:
   repo: git://github.com/simpsonjulian/puppet-mysql.git
   path: modules
 passenger:
-  repo: git://github.com/douglassquirrel/puppet-passenger.git
+  repo: git://github.com/simpsonjulian/puppet-passenger.git
   path: modules
 ubuntu:
   repo: git://github.com/simpsonjulian/puppet-ubuntu.git
